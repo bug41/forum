@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database"
 import Link from "next/link"
+import DetailLink from "./DetailLink"
 
 export default async function List() {
 
@@ -15,9 +16,11 @@ export default async function List() {
                 return (
                 <div className="list-item" key={i}>
                     <h4>
-                      <Link href={"../detail/"+result[i]._id}>{result[i].title}</Link>                      
+                      <Link href={"/detail/"+result[i]._id}>{result[i].title}</Link>                      
                     </h4>
-                    <p>{result[i].content}</p>
+                    <Link href={'/edit/'+result[i]._id}>수정</Link>
+                    {/* <DetailLink/> */}
+                    <p>1월1일</p>
                 </div>
                 )
             })
