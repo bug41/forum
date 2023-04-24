@@ -9,4 +9,4 @@ import { connectDB } from "@/util/database"
     }else{
         console.log(res.status(200).json(result))
     }
-}
+}   
