@@ -21,7 +21,11 @@ export default function ListItem({result}) {
                     },1000)
                   })
                   */
-                }}>🗑️</span>
+                 //?_id='+result[i]._id
+                 fetch('/api/abc/'+result[i]._id)
+                 .then((r) => r.json()
+                 ).then(() => {})
+              }}>🗑️</span>
               <p>1월 1일</p>
             </div>
          ) }
