@@ -9,7 +9,19 @@ export default function ListItem({result}) {
             <div className="list-item" key={i}>
               <Link href={'/detail/' + result[i]._id}>{result[i].title}</Link>
               <Link href={'/edit/' + result[i]._id} className="list-btn">✏️</Link>
-              <span onClick={()=>{fetch('/api/post/delete',{method: 'DELETE', body : JSON.stringify({"_uid":result[i]._id})})}}>🗑️</span>
+              <span onClick={(e)=>{
+                 /*
+                  fetch(
+                    '/api/post/delete',{method: 'DELETE', body : JSON.stringify({"_uid":result[i]._id})}
+                  ).then((r) => r.json()
+                  ).then(() => {
+                    e.target.parentElement.style.opacity = 0;
+                    setTimeout(() => {
+                      e.target.parentElement.style.display = 'none'
+                    },1000)
+                  })
+                  */
+                }}>🗑️</span>
               <p>1월 1일</p>
             </div>
          ) }

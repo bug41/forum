@@ -57,3 +57,11 @@
   .logo {
     font-weight: bold;
   } 
+
+
+  /* ListItem */
+  .list-item {
+    opacity: 1;
+    transition : all 1s;
+  }
+
