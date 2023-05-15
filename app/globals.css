@@ -44,16 +44,20 @@
     color:black;
   }
 
-
   .navbar {
     background: white;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
   }
+
   .navbar a {
     margin-right: 10px;
     text-decoration: none;
     color: black;
   }
+
+
   .logo {
     font-weight: bold;
   } 
