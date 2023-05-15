@@ -10,15 +10,13 @@ export default function Write(){
         <form action="/api/post/new" method="POST"> 
         <input name="title" placeholder="글제목"/> 
         <input name="content" placeholder="글내용"/> 
+        <input type="hidden" name="imageUrl" value={src}/>
         <button type="submit">전송</button> 
       </form>
 
       <input type="file" accept="image/*" onChange={
         async (e) => {
-          let file = e.target.files[0]
-
-          console.log(file.name);
-          
+          let file = e.target.files[0]          
           let fileName = encodeURIComponent(file.name)
           let res = await fetch('/api/post/image?file=' + fileName)
           res = await res.json()
