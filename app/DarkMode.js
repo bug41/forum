@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState,useEffect } from 'react'
+import Cookies from 'js-cookie';
 
 export default function DarkMode() {
 
@@ -9,8 +10,9 @@ export default function DarkMode() {
 
     const [count, setCount] = useState(0);
     const [mode, setMode] = useState('N');
-    
-    let cookieChk = ('; ' + document.cookie).split(`; mode=`).pop().split(';')[0]
+    const cookieChk = Cookies.get('mode');
+
+    //let cookieChk = ('; ' +document.cookie).split(`; mode=`).pop().split(';')[0]
     
     useEffect(()=>{
        //쿠키생성, 컴포넌트 로드시 1회 실행
@@ -33,7 +35,8 @@ export default function DarkMode() {
     };
 
     const setCookie = (mode) =>{
-        document.cookie = 'mode='+mode+'; max-age=' + (3600 * 24 * 400)
+        Cookies.set('mode', mode, { expires: 400, path: '/' });
+       //document.cookie = 'mode='+mode+'; max-age=' + (3600 * 24 * 400)
     }
     
     return(
